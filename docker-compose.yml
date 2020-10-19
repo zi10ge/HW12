@@ -5,6 +5,27 @@ services:
         build: ./build
         volumes:
             - data_volume:/home/app
+    
+    db:
+        image: postgres:10
+        ports:
+            "5432":"5432"
+        environment:S
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_USER: postgres
+            PGDATA : /var/lib/postgresql/data
+        volumes:
+            - ./pgdata:/var/lib/postgresql/data
+
+    web:
+        image: tomcat:8.0
+        ports:
+            - "8080":"8080"
+        volumes:
+            - data_volume:/use/local/tomcat/webapps
+        depends_on:
+            - build
+            - db
 
 volumes:
     data_volume:
