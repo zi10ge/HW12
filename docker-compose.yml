@@ -5,6 +5,9 @@ services:
         build: ./build
         volumes:
             - data_volume:/home/app
+        depends_on:
+            - build
+            - db
     
     db:
         image: postgres:10
@@ -23,9 +26,6 @@ services:
             - "8080:8080"
         volumes:
             - data_volume:/usr/local/tomcat/webapps
-        depends_on:
-            - build
-            - db
 
 volumes:
     data_volume:
