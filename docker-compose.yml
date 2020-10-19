@@ -2,9 +2,10 @@ version: '3'
 
 services:
     build:
-        build: ./build
+        build: ./build2
         volumes:
-            - data_volume:/home/app
+            - data_volume:/app/HW12/App42PaaS-Java-MySQL-Sample/target
+           # - data_volume:/home/app
         networks:
             net:
                 ipv4_address: 192.168.0.10            
