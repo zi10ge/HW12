@@ -10,7 +10,7 @@ services:
         environment:
             MYSQL_DATABASE: 'Appdb'
             MYSQL_USER: 'App'
-            MYSQL_PASSWORD: 'App'
+            MYSQL_PASSWORD: '*****'
             MYSQL_ROOT_PASSWORD: 'App'
         volumes:
             - ./sqldata:/var/lib/mysql
