@@ -6,7 +6,7 @@ services:
         volumes:
             - data_volume:/home/app
         depends_on:
-            - build
+            - web
             - db
     
     db:
