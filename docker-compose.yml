@@ -1,15 +1,6 @@
 version: '3'
 
 services:
-    build:
-        build: ./build
-        volumes:
-           # - data_volume:/app/HW12/App42PaaS-Java-MySQL-Sample/target
-            - data_volume:/home/app
-        networks:
-            net:
-                ipv4_address: 192.168.0.10            
-    
     db:
         image: mysql:8.0
         ports:
@@ -28,8 +19,7 @@ services:
                 ipv4_address: 192.168.0.11
 
     web:
-        image: 'tomcat:7.0'
-        #image: tomcat:8.0
+        image: 'tomcat:8.0'
         ports:
             - '8080:8080'
         volumes:
@@ -37,6 +27,14 @@ services:
         networks:
             net:
                 ipv4_address: 192.168.0.12            
+
+    build:
+        build: ./build
+        volumes:
+            - data_volume:/home/app
+        networks:
+            net:
+                ipv4_address: 192.168.0.10       
 
 volumes:
     data_volume:
