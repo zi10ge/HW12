@@ -9,7 +9,7 @@ services:
     db:
         image: postgres:10
         ports:
-            - "5432":"5432"
+            - "5432:5432"
         environments:
             POSTGRES_PASSWORD: postgres
             POSTGRES_USER: postgres
@@ -20,7 +20,7 @@ services:
     web:
         image: tomcat:8.0
         ports:
-            - "8080":"8080"
+            - "8080:8080"
         volumes:
             - data_volume:/use/local/tomcat/webapps
         depends_on:
