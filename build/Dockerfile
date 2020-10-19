@@ -1,4 +1,4 @@
-FROM ubuntu:18.4
+FROM ubuntu:18.04
 
 ENV APP /home/app
 ENV WDir /home/build
