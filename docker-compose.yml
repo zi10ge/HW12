@@ -2,7 +2,7 @@ version: '3'
 
 services:
     db:
-        image: mysql:8.0
+        image: mysql:5.7.5
         ports:
             - '3306:3306'
         expose:
@@ -19,14 +19,16 @@ services:
                 ipv4_address: 192.168.0.11
 
     web:
-        image: 'tomcat:7.0'
+        image: 'tomcat:8.0'
         ports:
             - '8080:8080'
         volumes:
             - data_volume:/usr/local/tomcat/webapps
         networks:
             net:
-                ipv4_address: 192.168.0.12            
+                ipv4_address: 192.168.0.12
+        depends_on:
+            - db           
 
     build:
         build: ./build
