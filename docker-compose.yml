@@ -13,7 +13,7 @@ services:
             MYSQL_PASSWORD: 'Secret111'
             MYSQL_ROOT_PASSWORD: 'App'
         volumes:
-            - ./sqldata:/var/lib/mysql
+            - db_volume:/var/lib/mysql
         networks:
             net:
                 ipv4_address: 192.168.0.11
@@ -41,7 +41,7 @@ services:
 
 volumes:
     data_volume:
-
+    db_volume:
 networks:
     net:
         driver: bridge
