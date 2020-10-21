@@ -2,7 +2,7 @@ version: '3'
 
 services:
     db:
-        image: mysql:5.7.5
+        image: mysql:8.0
         ports:
             - '3306:3306'
         expose:
@@ -10,7 +10,7 @@ services:
         environment:
             MYSQL_DATABASE: 'Appdb'
             MYSQL_USER: 'App'
-            MYSQL_PASSWORD: 'Secret'
+            MYSQL_PASSWORD: 'Secret111'
             MYSQL_ROOT_PASSWORD: 'App'
         volumes:
             - ./sqldata:/var/lib/mysql
@@ -28,7 +28,8 @@ services:
             net:
                 ipv4_address: 192.168.0.12
         depends_on:
-            - db      
+            - db
+            - build
 
     build:
         build: ./build
