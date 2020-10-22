@@ -1,5 +1,4 @@
-#FROM ubuntu:18.04
-FROM maven:3.6-jdk-11-openj9
+FROM ubuntu:18.04
 
 ENV APP /home/app
 ENV WDir /home/build
