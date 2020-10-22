@@ -19,7 +19,7 @@ services:
                 ipv4_address: 192.168.0.11
 
     web:
-        image: 'tomcat:7.0'
+        image: 'tomcat:8.5'
         ports:
             - '8080:8080'
         volumes:
